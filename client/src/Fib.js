@@ -13,16 +13,16 @@ class Fib extends Component {
 		});
 		this.setState({ index: '' });
 	};
-	async fetchValues() {
+	 fetchValues=async()=> {
 		const values = await axios.get('/api/values/current');
 		this.setState({ values: values.data });
 	}
-	async fetchIndexes() {
+ fetchIndexes=	async()=> {
 		const seenIndexes = await axios.get('/api/values/all');
 		this.setState({ seenIndexes: seenIndexes.data });
 	}
 
-	renderSeenIndexes() {
+	renderSeenIndexes=()=> {
 		console.log(this.state.seenIndexes)
 		return this.state.seenIndexes.map(({ number }) => number).join(',');
 	}
