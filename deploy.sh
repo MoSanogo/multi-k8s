@@ -1,7 +1,7 @@
 docker build -t msanogo/multi-client:latest -f ./client/Dockerfile ./client
 docker build -t msanogo/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t msanogo/multi-server:latest -f ./server/Dockerfile  ./server
-docker build msanogo/multi-server:$SHA -f ./server/Dockerfile  ./server
+docker build -t msanogo/multi-server:$SHA -f ./server/Dockerfile  ./server
 docker build -t msanogo/multi-worker:latest -f ./worker/Dockerfile  ./worker
 docker build -t msanogo/multi-worker:$SHA -f ./worker/Dockerfile  ./worker
 docker push msanogo/multi-client:latest
